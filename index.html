@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros Antiguos - Historia y Juego</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f9f7f7;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #bde0fe;
+            padding: 15px;
+        }
+
+        h1 {
+            margin: 0;
+            color: #2b2d42;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav button {
+            background-color: #ffc8dd;
+            border: none;
+            border-radius: 8px;
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #ffafcc;
+        }
+
+        section {
+            display: none;
+            padding: 20px;
+            animation: fadeIn 0.5s;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        .info {
+            background-color: #cdb4db;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .carro {
+            background-color: #fef6ff;
+            margin: 20px auto;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 700px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .carro img {
+            width: 90%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .game {
+            background-color: #a2d2ff;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .formulario {
+            background-color: #bde0fe;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #ffc8dd;
+        }
+
+        button:hover {
+            background-color: #ffafcc;
+        }
+
+        .pregunta {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .resultado {
+            font-size: 18px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🚗 Carros Antiguos</h1>
+        <nav>
+            <button onclick="mostrarSeccion('info')">Información</button>
+            <button onclick="mostrarSeccion('juego')">Juego</button>
+            <button onclick="mostrarSeccion('registro')">Registro</button>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN INFORMACIÓN -->
+    <section id="info" class="info visible">
+        <h2>Historia y Modelos Icónicos de Carros Antiguos</h2>
+        <p>Los automóviles antiguos son verdaderas joyas de la ingeniería. Aquí te presentamos cinco modelos que marcaron la historia del automovilismo.</p>
+
+        <div class="carro">
+            <h3>1. Ford Modelo T (1908)</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/1910Ford-T.jpg" 
+                 alt="Ford Modelo T" 
+                 onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/3/3d/Ford_Model_T_1910.jpg'">
+            <p>El Ford Modelo T fue el primer auto fabricado en masa. Su accesibilidad permitió que millones de personas tuvieran su propio automóvil.</p>
+        </div>
+
+        <div class="carro">
+            <h3>2. Rolls-Royce Silver Ghost (1906)</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/1907_Rolls-Royce_Silver_Ghost.jpg" 
+                 alt="Rolls-Royce Silver Ghost"
+                 onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/1/18/Rolls-Royce_Silver_Ghost_1907.jpg'">
+            <p>Un símbolo del lujo británico, fue considerado el coche más confiable del mundo durante años.</p>
+        </div>
+
+        <div class="carro">
+            <h3>3. Volkswagen Escarabajo (1938)</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/VW_K%C3%A4fer_1300_1966.jpg" 
+                 alt="Volkswagen Escarabajo"
+                 onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/2/21/VW_Beetle_1967.jpg'">
+            <p>El Escarabajo fue un ícono del siglo XX: resistente, económico y simpático. 
+            Diseñado por Ferdinand Porsche, se convirtió en el auto más vendido del mundo.</p>
+        </div>
+
+        <div class="carro">
+            <h3>4. Chevrolet Bel Air (1957)</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/1957_Chevrolet_Bel_Air_2-Door_Hardtop.jpg" 
+                 alt="Chevrolet Bel Air"
+                 onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/f/fc/Chevrolet_Bel_Air_1957.jpg'">
+            <p>Su diseño elegante, sus colores brillantes y sus aletas traseras lo convirtieron en el símbolo de los años 50 en Estados Unidos.</p>
+        </div>
+
+        <div class="carro">
+            <h3>5. Jaguar E-Type (1961)</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Jaguar_E-Type_series_1_3.8_FHC_1964.jpg" 
+                 alt="Jaguar E-Type"
+                 onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/f/ff/Jaguar_E-Type_1962.jpg'">
+            <p>Enzo Ferrari lo llamó “el auto más bello jamás fabricado”. El E-Type combinaba velocidad, estilo y un diseño inolvidable.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN JUEGO -->
+    <section id="juego" class="game">
+        <h2>Juego: ¿Cuánto sabes sobre carros antiguos?</h2>
+        <div id="quiz">
+            <div id="pregunta" class="pregunta"></div>
+            <div id="opciones"></div>
+            <div class="resultado" id="resultado"></div>
+            <button id="btnSiguiente" onclick="siguientePregunta()">Siguiente</button>
+        </div>
+    </section>
+
+    <!-- SECCIÓN REGISTRO -->
+    <section id="registro" class="formulario">
+        <h2>Formulario de Registro / Inicio de Sesión</h2>
+        <form onsubmit="event.preventDefault(); registrarUsuario();">
+            <input type="text" id="nombre" placeholder="Nombre de usuario" required><br>
+            <input type="password" id="clave" placeholder="Contraseña" required><br>
+            <button type="submit">Registrar / Iniciar Sesión</button>
+        </form>
+        <p id="mensajeRegistro"></p>
+    </section>
+
+    <script>
+        // Mostrar sección
+        function mostrarSeccion(id) {
+            document.querySelectorAll("section").forEach(sec => sec.classList.remove("visible"));
+            document.getElementById(id).classList.add("visible");
+        }
+
+        // --- JUEGO ---
+        const preguntas = [
+            { pregunta: "¿En qué año se produjo el primer automóvil de Karl Benz?", opciones: ["1886", "1900", "1920"], respuesta: "1886" },
+            { pregunta: "¿Qué marca fabricó el famoso Modelo T?", opciones: ["Ford", "Chevrolet", "Peugeot"], respuesta: "Ford" },
+            { pregunta: "¿De qué país es originario el Volkswagen Escarabajo?", opciones: ["Alemania", "Francia", "Italia"], respuesta: "Alemania" },
+            { pregunta: "¿Qué modelo tenía aletas traseras y colores brillantes?", opciones: ["Chevrolet Bel Air", "Jaguar E-Type", "Fiat 500"], respuesta: "Chevrolet Bel Air" },
+            { pregunta: "¿Quién diseñó el Volkswagen Escarabajo?", opciones: ["Ferdinand Porsche", "Henry Ford", "Enzo Ferrari"], respuesta: "Ferdinand Porsche" },
+            { pregunta: "¿Qué auto consideró Enzo Ferrari el más bello del mundo?", opciones: ["Jaguar E-Type", "Ford T", "Cadillac Eldorado"], respuesta: "Jaguar E-Type" },
+            { pregunta: "¿Qué auto marcó el inicio de la producción en masa?", opciones: ["Ford Modelo T", "BMW 507", "Citroën DS"], respuesta: "Ford Modelo T" },
+            { pregunta: "¿Qué marca creó el Silver Ghost?", opciones: ["Rolls-Royce", "Bentley", "Mercedes-Benz"], respuesta: "Rolls-Royce" },
+            { pregunta: "¿Qué auto europeo fue símbolo de economía y durabilidad?", opciones: ["Volkswagen Escarabajo", "Peugeot 403", "Mini Cooper"], respuesta: "Volkswagen Escarabajo" },
+            { pregunta: "¿En qué década apareció el Jaguar E-Type?", opciones: ["1960s", "1950s", "1970s"], respuesta: "1960s" }
+        ];
+
+        let indice = 0;
+        let puntaje = 0;
+
+        function cargarPregunta() {
+            let p = preguntas[indice];
+            document.getElementById("pregunta").innerText = p.pregunta;
+            let opcionesHTML = "";
+            p.opciones.forEach(op => {
+                opcionesHTML += `<button onclick="verificarRespuesta('${op}')">${op}</button><br>`;
+            });
+            document.getElementById("opciones").innerHTML = opcionesHTML;
+            document.getElementById("resultado").innerText = "";
+        }
+
+        function verificarRespuesta(opcion) {
+            if (opcion === preguntas[indice].respuesta) {
+                document.getElementById("resultado").innerText = "✅ ¡Correcto!";
+                puntaje++;
+            } else {
+                document.getElementById("resultado").innerText = "❌ Incorrecto";
+            }
+        }
+
+        function siguientePregunta() {
+            indice++;
+            if (indice < preguntas.length) {
+                cargarPregunta();
+            } else {
+                document.getElementById("quiz").innerHTML = `<h3>🎉 Juego terminado</h3>
+                <p>Tu puntuación: ${puntaje} de ${preguntas.length}</p>`;
+            }
+        }
+
+        cargarPregunta();
+
+        // Registro simulado
+        function registrarUsuario() {
+            const nombre = document.getElementById("nombre").value;
+            const clave = document.getElementById("clave").value;
+            if (nombre && clave) {
+                document.getElementById("mensajeRegistro").innerText =
+                    `👋 ¡Bienvenido, ${nombre}! Has iniciado sesión correctamente.`;
+                document.getElementById("nombre").value = "";
+                document.getElementById("clave").value = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
